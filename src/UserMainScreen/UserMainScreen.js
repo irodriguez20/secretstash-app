@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Context from '../Context'
 import STORE from '../STORE';
 
 
@@ -7,7 +8,24 @@ class UserMainScreen extends Component {
         store: STORE
     };
 
+    handleClickView() {
+        console.log('handleClickView called')
+    }
+
+    handleClickDelete() {
+        console.log('handleClickDelete called')
+    }
+
+    handleClickEdit() {
+        console.log('handleClickedEdit called')
+    }
+
     render() {
+
+        const value = {
+            folders: this.state.store,
+            recipes: this.state.store
+        }
         const { folders, recipes } = this.state.store;
         return (
             <div className="body">
@@ -39,9 +57,9 @@ class UserMainScreen extends Component {
                                     <section key={recipe.id}>
                                         <h4>{recipe.recipename}</h4>
                                         <blockquote>{recipe.description}</blockquote>
-                                        <button className="edit">Edit</button>
-                                        <button className="view">View</button>
-                                        <button className="Delete">Delete</button>
+                                        <button onClick={this.handleClickEdit} className="edit">Edit</button>
+                                        <button onClick={this.handleClickView} className="view">View</button>
+                                        <button onClick={this.handleClickDelete} className="Delete">Delete</button>
                                     </section>
                                 )}
                             </div>

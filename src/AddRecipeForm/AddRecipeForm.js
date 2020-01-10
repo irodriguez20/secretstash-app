@@ -21,26 +21,11 @@ class AddRecipeForm extends Component {
                                 <input placeholder='1hr' type='text' name='estimated-time' id='estimated-time' />
                             </div>
                             <div className="form-section">
+                                {}
                                 <label htmlFor='folderid'>Folder to Add To</label>
                                 <input type="radio" name='folderid' id='folderid' className="folderid-radio" />
                                 <label htmlFor='folderid'>
                                     <span>Dinner</span>
-                                </label>
-                                <input type="radio" name='folderid' id='folderid' className="folderid-radio" />
-                                <label htmlFor='folderid'>
-                                    <span>Lunch</span>
-                                </label>
-                                <input type="radio" name='folderid' id='folderid' className="folderid-radio" />
-                                <label htmlFor='folderid'>
-                                    <span>Breakfast</span>
-                                </label>
-                                <input type="radio" name='folderid' id='folderid' className="folderid-radio" />
-                                <label htmlFor='folderid'>
-                                    <span>Dessert</span>
-                                </label>
-                                <input type="radio" name='folderid' id='folderid' className="folderid-radio" />
-                                <label htmlFor='folderid'>
-                                    <span>Drinks</span>
                                 </label>
                                 <p>[<em>Add options for folders</em>]</p>
                             </div>
