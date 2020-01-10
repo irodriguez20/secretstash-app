@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
   color: #444;
@@ -19,13 +19,12 @@ footer {
 }
 
 nav {
-  /* position: absolute; */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
 }
-
 footer {
   display: flex;
   align-content: flex-end;
@@ -37,14 +36,32 @@ header {
   padding: 45px 15px;
 }
 
+.column {
+  float: left;
+  /* padding: 10px;
+    height: 300px; */
+}
+
+.left {
+  width: 25%;
+  border-color: #444;
+  border-width: 2px;
+}
+.right {
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 section {
   min-height: 200px;
   padding: 30px 15px;
   background-color: #bbb;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-radius: 3px;
 }
 
 section:nth-child(even) {
@@ -60,31 +77,25 @@ p + p {
   margin-top: 15px;
 }
 
-form {
-  text-align: left;
-}
-
-input,
-textarea {
-  width: 100%;
-  max-width: 500px;
-}
-
-label {
-  display: block;
-}
-
 button {
   padding: 10px;
   border: none;
+  margin-right: 5px;
   border-radius: 3px;
+}
+
+.folder-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.link {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 button:hover {
   background-color: #444;
   color: whitesmoke;
-}
-
-.form-section {
-  margin-bottom: 30px;
 }

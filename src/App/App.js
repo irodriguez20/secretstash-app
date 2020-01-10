@@ -1,43 +1,45 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import NavBar from '../NavBar/NavBar';
-import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
-import LoginForm from '../LoginForm/LoginForm';
+// import { Route, Link } from 'react-router-dom';
+// import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
+// import LoginForm from '../LoginForm/LoginForm';
 import './App.css';
 
 class App extends Component {
-  /* state = {}; */
+
 
   /* componentDidMount() {} */
 
-  renderNavRoutes() {
-    return (
-      <>
-        <Route
-          path='/login'
-          component={LoginForm}
-        />
-        <Route
-          path='/add-recipe'
-          component={AddRecipeForm}
-        />
-      </>
-    )
-  }
+  // renderNavRoutes() {
+  //   return (
+  //     <>
+  //       <Route
+
+  //         path='/login'
+  //         component={LoginForm}
+  //       />
+  //       <Route
+
+  //         path='/add-recipe'
+  //         component={AddRecipeForm}
+  //       />
+  //     </>
+  //   )
+  // }
 
 
   render() {
     return (
       <div className="App">
-        {this.renderNavRoutes()}
-        <NavBar />
+        {/* {this.renderNavRoutes()}
+        <NavBar /> */}
         <main>
-          <header className="banner">
+          {/* <header className="banner">
             <Link to='/'>
               <h1>Secret Stash</h1>
             </Link>
-          </header>
+          </header> */}
           <section>
+            <h3>Why Secret Stash</h3>
             <p> Recipes are memories captured in food. They are family heirlooms passed down from generation to generation. Losing
               a recipe, is losing something very special and sentimental. Recipes on paper are a thing of the past. As Generations
               continue to grow technologically, recipes on paper will become obsolete. We need a way to store our family history with

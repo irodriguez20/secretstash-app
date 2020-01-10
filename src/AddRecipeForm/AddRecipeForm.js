@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from '../NavBar/NavBar'
 import './AddRecipeForm.css';
 
 class AddRecipeForm extends Component {
@@ -7,7 +6,6 @@ class AddRecipeForm extends Component {
     render() {
         return (
             <div>
-                <NavBar />
                 <main>
                     <header role="banner">
                         <h1>Add a New Memory</h1>
