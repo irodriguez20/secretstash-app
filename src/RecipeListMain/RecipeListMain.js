@@ -5,6 +5,7 @@ import Recipe from '../Recipe/Recipe'
 import CircleButton from '../CircleButton/CircleButton'
 import Context from '../Context'
 import { getRecipesForFolder } from '../recipes-helpers'
+import './RecipeListMain.css'
 
 class RecipeListMain extends Component {
     static defaultProps = {

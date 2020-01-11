@@ -24,7 +24,7 @@ export default {
 
     "recipes": [
         {
-            recipename: 'Salsa',
+            name: 'Salsa',
             id: 1,
             folderid: 2,
             time: '15min',
@@ -33,7 +33,7 @@ export default {
             steps: "1. Place the tomatoes and peppers in a pot of water. Let it get to a low boil. Once the skin has split on the tomatoes and the peppers color has faded slightly take the pot off the burner. 2. Spoon out the tomatoes and place them in the blender. Spoon out the peppers and cut the stems off. If you don't want all the seeds, slice the pepper in half and scoop out the seeds. Then place the peppers into the blender. 3. Chop the yellow onion and add it to the blender. 4. Blend until the salsa is smooth and everything is combined. 5. Add salt, blend and taste the salsa. If needed add a bit more salt. 6. Chop a handful of cilantro (taking care not to include stems). Add the cilantro to the blender and pulse until just combined. 7. Pour into a serving dish or tupperware and serve!",
         },
         {
-            recipename: 'Grandma Margarita\'s Tortillas',
+            name: 'Grandma Margarita\'s Tortillas',
             id: 2,
             folderid: 3,
             time: '1hr 30min',
@@ -42,7 +42,7 @@ export default {
             steps: '1.Combine 3c flour and salt in a mixing bowl, then add another 1c of flour. 2.Boil water. 3.Add crisco to the flour and blend with your fingers until evenly combined. 4. Make a well in the center of the flour and pour half of the hot water into the well. 5.Mix the water and the flour together with your hands, beginning to create a dough. 6.Slowly add more water as needed, until the dough looks a little coarse but not sticky. 7.Pinch balls of dough abit bigger than the size of a golf ball. Set in a new bowl. 8.Let rise for 10min and begin heating up your comal/skillet. 9.Roll each dough ball until thin and evenly spread. 10.Before placing on the comal, gently stretch each end of the rolled out tortilla to make sure it will cook evenly. 11.Place on the comal, let first side cook for 5-10sec then flip. Let the second side cook a bit longer, until several golden brown spots appear on that side. Flip and continue on first side for another 5sec. 12.Place each cooked tortilla into a bowl lined with foil and a dry towel or paper towel. Then keep the bowl covered. 13.Serve and enjoy!  ',
         },
         {
-            recipename: 'Colorado Sunrise',
+            name: 'Colorado Sunrise',
             id: 3,
             folderid: 5,
             time: '30min',

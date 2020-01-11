@@ -1,0 +1,47 @@
+.Recipe {
+  --recipe-height: 88px;
+  background-color: #010d1e;
+  color: #4698db;
+  height: var(--note-height);
+  margin-bottom: 8px;
+  max-width: 380px;
+  padding: 8px 0 8px 8px;
+  position: relative;
+}
+
+.Recipe__delete {
+  --recipe-button-height: 32px;
+  background-color: #041a3a;
+  border: 0;
+  color: #bdbcbc;
+  float: right;
+  font-size: 12px;
+  height: var(--recipe-button-height);
+  position: relative;
+  top: calc((var(--recipe-button-height) + 32px) * -1);
+  transform-origin: right bottom;
+  transform: rotate(-90deg);
+  width: calc(var(--recipe-height));
+}
+.Recipe__delete:hover {
+  background-color: #bd0909;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Recipe__title {
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: 0;
+  max-width: 80%;
+  min-height: 24px;
+}
+.Recipe__title a {
+  color: #cacaca;
+  display: block;
+  text-decoration: none;
+}
+.Recipe__title a:hover {
+  color: #ffb72f;
+}

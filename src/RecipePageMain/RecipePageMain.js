@@ -3,6 +3,7 @@ import Recipe from '../Recipe/Recipe'
 import Context from '../Context'
 import { findRecipe } from '../recipes-helpers'
 import './RecipePageMain.css'
+import { findAllByPlaceholderText } from '@testing-library/react';
 
 class RecipePageMain extends Component {
     static defaultProps = {
@@ -23,6 +24,7 @@ class RecipePageMain extends Component {
 
         const recipe = findRecipe(recipes, recipeId) || { content: '' }
 
+        console.log('recipe page main params props', this.props.match.params)
         return (
             <section className='RecipePageMain'>
                 <Recipe
@@ -30,28 +32,22 @@ class RecipePageMain extends Component {
                     name={recipe.name}
                     time={recipe.time}
                     ingredients={recipe.ingredients}
-                    content={recipe.description}
+                    description={recipe.description}
                     steps={recipe.steps}
                 />
                 <section>
                     <div className='RecipePageMain__content'>
-                        {recipe.content.split(/\n \r|\n/).map((para, i) =>
-                            <p key={i}>{para}</p>
-                        )}
+                        <blockquote>{recipe.description}</blockquote>
                     </div>
                 </section>
                 <section>
                     <div className='RecipePageMain__ingredients'>
-                        {recipe.ingredients.split(/\n \r|\n/).map((para, i) =>
-                            <p key={i}>{para}</p>
-                        )}
+                        {recipe.ingredients}
                     </div>
                 </section>
                 <section>
                     <div className='RecipePageMain__steps'>
-                        {recipe.steps.split(/\n \r|\n/).map((para, i) =>
-                            <p key={i}>{para}</p>
-                        )}
+                        <blockquote>{recipe.steps}</blockquote>
                     </div>
                 </section>
             </section>

@@ -1,0 +1,18 @@
+.RecipeListMain ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.RecipeListMain__button-container {
+  max-width: 380px;
+  margin: 0 10px;
+}
+
+.RecipeListMain__add-recipe-button {
+  margin: 0 auto 20px;
+}
+.RecipeListMain__add-recipe-button:hover {
+  background-color: teal;
+  color: white;
+}

@@ -5,7 +5,6 @@ import { Route, Link } from 'react-router-dom';
 import STORE from '../STORE';
 import './App.css';
 import Context from '../Context';
-import UserMainScreen from '../UserMainScreen/UserMainScreen';
 import LandingPage from '../LandingPage/LandingPage';
 import RecipePageNav from '../RecipePageNav/RecipePageNav';
 import RecipeListNav from '../RecipeListNav/RecipeListNav';
