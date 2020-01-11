@@ -1,68 +1,171 @@
 import React, { Component } from 'react';
-// import { Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 // import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 // import LoginForm from '../LoginForm/LoginForm';
+import STORE from '../STORE';
 import './App.css';
+import Context from '../Context';
+import UserMainScreen from '../UserMainScreen/UserMainScreen';
+import LandingPage from '../LandingPage/LandingPage';
+import RecipePageNav from '../RecipePageNav/RecipePageNav';
+import RecipeListNav from '../RecipeListNav/RecipeListNav';
+import RecipeListMain from '../RecipeListMain/RecipeListMain'
+import AddFolder from '../AddFolder/AddFolder';
+import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
+import RecipePageMain from '../RecipePageMain/RecipePageMain'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getRecipesForFolder, findRecipe, findFolder } from '../recipes-helpers';
+
 
 class App extends Component {
+  state = {
+    recipes: [],
+    folders: [],
+  };
 
+  componentDidMount() {
+    setTimeout(() => this.setState(STORE), 600)
+  }
 
-  /* componentDidMount() {} */
+  handleAddFolder = folder => {
+    this.setState({
+      folders: [
+        ...this.state.folders,
+      ]
+    })
+  }
 
-  // renderNavRoutes() {
-  //   return (
-  //     <>
-  //       <Route
+  handleAddRecipe = recipe => {
+    this.setState({
+      recipes: [
+        ...this.state.recipes,
+      ]
+    })
+  }
 
-  //         path='/login'
-  //         component={LoginForm}
-  //       />
-  //       <Route
+  handleDeleteRecipe = recipeId => {
+    const newRecipes = this.state.recipes.filter(recipe => recipe.id !== recipeId)
+    this.setState({
+      recipes: newRecipes
+    })
+  }
 
-  //         path='/add-recipe'
-  //         component={AddRecipeForm}
-  //       />
-  //     </>
-  //   )
-  // }
+  renderNavRoutes() {
+    const { recipes, folders } = this.state;
+    return (
+      <>
+        {['/', '/folder/:folderId'].map(path => (
+          <Route
+            exact
+            key={path}
+            path={path}
+            render={routeProps => (
+              <RecipeListNav
+                folders={folders}
+                recipes={recipes}
+                {...routeProps}
+              />
+            )}
+          // component={RecipeListNav}
+          />
+        ))}
+        <Route
+
+          path='/login'
+          component={RecipePageMain}
+        />
+        <Route
+          path='/recipe/:recipeId'
+          component={RecipePageNav}
+        />
+        <Route
+          path='/add-folder'
+          component={RecipePageNav}
+        />
+        <Route
+
+          path='/add-recipe'
+          component={RecipePageNav}
+        />
+      </>
+    )
+  }
+
+  renderMainRoutes() {
+    const { recipes, folders } = this.state;
+    return (
+      <>
+        {['/', '/folder/:folderId'].map(path => (
+          <Route
+            exact
+            key={path}
+            path={path}
+            render={routeProps => {
+              const { folderId } = routeProps.match.params;
+              const recipesForFolder = getRecipesForFolder(
+                recipes,
+                folderId
+              );
+              return (
+                <RecipeListMain
+                  {...routeProps}
+                  recipes={recipesForFolder}
+                />
+              )
+            }}
+          // component={RecipeListMain}
+          />
+        ))}
+        <Route
+          path='/recipe/:recipeId'
+          render={routeProps => {
+            const { recipeId } = routeProps.match.params;
+            const recipe = findRecipe(recipes, recipeId) || {};
+            const folder = findFolder(folders, recipe.folderId);
+            return <RecipePageNav {...routeProps} folder={folder} />
+          }}
+        // component={RecipePageMain}
+        />
+        <Route
+          path='/add-folder'
+          component={AddFolder}
+        />
+        <Route
+          path='/add-recipe'
+          component={AddRecipeForm}
+        />
+      </>
+    )
+  }
 
 
   render() {
+    const value = {
+      folders: this.state.folders,
+      recipes: this.state.recipes,
+      addFolder: this.handleAddFolder,
+      addNote: this.handleAddRecipe,
+      deleteNote: this.handleDeleteRecipe,
+    }
     return (
-      <div className="App">
-        {/* {this.renderNavRoutes()}
-        <NavBar /> */}
-        <main>
-          {/* <header className="banner">
-            <Link to='/'>
-              <h1>Secret Stash</h1>
-            </Link>
-          </header> */}
-          <section>
-            <h3>Why Secret Stash</h3>
-            <p> Recipes are memories captured in food. They are family heirlooms passed down from generation to generation. Losing
-              a recipe, is losing something very special and sentimental. Recipes on paper are a thing of the past. As Generations
-              continue to grow technologically, recipes on paper will become obsolete. We need a way to store our family history with
-				a lowered risk of loss.</p>
-          </section>
-          <section>
-            <h3>Save the Trees</h3>
-            <p>[<em>placeholder for recycling symbol and a tree</em>]</p>
-            <p>Research shows the average household throws away 13,000 pieces of paper a year. Storing your recipes online eliminates the use of paper, decreasing the amount of trees cut down and paper wasted.</p>
-          </section>
-          <section>
-            <h3>Organized in One Place</h3>
-            <p>[<em>placeholder for screenshot of main recipe list screen</em>]</p>
-            <p>My family and I are notorious for having recipes saved everywhere. From bookmarks on safari, stashed in recipe boxes, folders, even saved as images on our phones. <br /> With Secret Stash all of your recipes are neatly organized on one app. Create folders for the different categories, edit and delete recipes as desired. </p>
-          </section>
-          <section>
-            <h3>Share with your Family Members</h3>
-            <p>[<em>placeholder for screenshot of how to share profile/recipe</em>]</p>
-            <p>To many times to count I have wanted a recipe from a family member and end up having to go through a handful of people before I can recieve it. Secret Stash eliminates the telephone game. Easily share family recipes with a simple click of a button.</p>
-          </section>
-        </main>
-        <footer className="content-info">Footer</footer>
-      </div>
+      <Context.Provider value={value}>
+        <div className="App">
+          <nav className='App__nav'>
+            {this.renderNavRoutes()}
+          </nav>
+          <header className='App__header'>
+            <h1>
+              <Link to='/'>Secret Stash</Link>
+              {' '}
+              <FontAwesomeIcon icon='book' />
+            </h1>
+          </header>
+          <main className='App__main'>
+            {this.renderMainRoutes()}
+          </main>
+          <footer className="content-info">Footer</footer>
+        </div>
+      </Context.Provider>
     );
   }
 }

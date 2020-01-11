@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 export default React.createContext({
     folders: [],
@@ -6,5 +7,5 @@ export default React.createContext({
     addFolder: () => { },
     addRecipe: () => { },
     deleteRecipe: () => { },
-    updateRecipe: () => { },
+    // updateRecipe: () => { },
 })

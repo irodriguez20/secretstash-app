@@ -1,5 +1,5 @@
 export default {
-    folders: [
+    "folders": [
         {
             foldername: 'Breakfast',
             id: 1,
@@ -22,7 +22,7 @@ export default {
         }
     ],
 
-    recipes: [
+    "recipes": [
         {
             recipename: 'Salsa',
             id: 1,
