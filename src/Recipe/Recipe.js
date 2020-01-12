@@ -21,8 +21,6 @@ class Recipe extends Component {
     }
 
     render() {
-
-        console.log('recipe props', this.props)
         const { name, id, description, time } = this.props;
         return (
             <div className="Recipe">
@@ -35,13 +33,14 @@ class Recipe extends Component {
 
                         <blockquote>{description}</blockquote>
                         <Link to={`/edit/${id}`}>
-                            <button type="edit">Edit</button></Link>
+                            <button type="edit">Edit</button>
+                        </Link>
 
                         <button className='Recipe__delete' onClick={this.handleClickDelete} type="button">
                             <FontAwesomeIcon icon="trash-alt" />
                             {" "}
                             Delete
-                    </button>
+                       </button>
                     </section>
                 </main>
             </div>

@@ -17,10 +17,10 @@
   float: right;
   font-size: 12px;
   height: var(--recipe-button-height);
-  position: relative;
+  position: static;
   top: calc((var(--recipe-button-height) + 32px) * -1);
-  transform-origin: right bottom;
-  transform: rotate(-90deg);
+  /* transform-origin: right bottom; */
+  /* transform: rotate(-90deg); */
   width: calc(var(--recipe-height));
 }
 .Recipe__delete:hover {

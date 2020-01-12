@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './LandingPage.css';
 
 class LandingPage extends Component {
@@ -6,14 +7,12 @@ class LandingPage extends Component {
     render() {
         return (
             <div className="LandingPage">
-                {/* {this.renderNavRoutes()}
-        <NavBar /> */}
                 <main>
-                    {/* <header className="banner">
-            <Link to='/'>
-              <h1>Secret Stash</h1>
-            </Link>
-          </header> */}
+                    <header className="LandingPage-title">
+                        <Link to='/recipes'>
+                            <h1>Secret Stash</h1>
+                        </Link>
+                    </header>
                     <section>
                         <h3>Why Secret Stash</h3>
                         <p> Recipes are memories captured in food. They are family heirlooms passed down from generation to generation. Losing
@@ -37,7 +36,6 @@ class LandingPage extends Component {
                         <p>To many times to count I have wanted a recipe from a family member and end up having to go through a handful of people before I can recieve it. Secret Stash eliminates the telephone game. Easily share family recipes with a simple click of a button.</p>
                     </section>
                 </main>
-                <footer className="content-info">Footer</footer>
             </div>
         );
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/App';
+import LandingPage from './LandingPage/LandingPage'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faPlus, faChevronLeft, faTrashAlt, faBook

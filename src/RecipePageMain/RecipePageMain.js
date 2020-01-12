@@ -24,7 +24,6 @@ class RecipePageMain extends Component {
 
         const recipe = findRecipe(recipes, recipeId) || { content: '' }
 
-        console.log('recipe page main params props', this.props.match.params)
         return (
             <section className='RecipePageMain'>
                 <Recipe
@@ -36,13 +35,8 @@ class RecipePageMain extends Component {
                     steps={recipe.steps}
                 />
                 <section>
-                    <div className='RecipePageMain__content'>
-                        <blockquote>{recipe.description}</blockquote>
-                    </div>
-                </section>
-                <section>
                     <div className='RecipePageMain__ingredients'>
-                        {recipe.ingredients}
+                        <ul><li>{recipe.ingredients}</li></ul>
                     </div>
                 </section>
                 <section>

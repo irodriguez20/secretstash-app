@@ -50,28 +50,24 @@ class App extends Component {
   }
 
   renderNavRoutes() {
-    const { recipes, folders } = this.state;
     return (
       <>
-        {['/', '/folder/:folderId'].map(path => (
+        {['/', '/folder/:folderId'].map(path =>
           <Route
             exact
             key={path}
             path={path}
-            render={routeProps => (
-              <RecipeListNav
-                folders={folders}
-                recipes={recipes}
-                {...routeProps}
-              />
-            )}
-          // component={RecipeListNav}
+            component={RecipeListNav}
           />
-        ))}
+        )}
         <Route
 
           path='/login'
           component={RecipePageMain}
+        />
+        <Route
+          path='/home'
+          component={LandingPage}
         />
         <Route
           path='/recipe/:recipeId'
@@ -91,39 +87,19 @@ class App extends Component {
   }
 
   renderMainRoutes() {
-    const { recipes, folders } = this.state;
     return (
       <>
-        {['/', '/folder/:folderId'].map(path => (
+        {['/', '/folder/:folderId'].map(path =>
           <Route
             exact
             key={path}
             path={path}
-            render={routeProps => {
-              const { folderId } = routeProps.match.params;
-              const recipesForFolder = getRecipesForFolder(
-                recipes,
-                folderId
-              );
-              return (
-                <RecipeListMain
-                  {...routeProps}
-                  recipes={recipesForFolder}
-                />
-              )
-            }}
-          // component={RecipeListMain}
+            component={RecipeListMain}
           />
-        ))}
+        )}
         <Route
           path='/recipe/:recipeId'
-          render={routeProps => {
-            const { recipeId } = routeProps.match.params;
-            const recipe = findRecipe(recipes, recipeId) || {};
-            const folder = findFolder(folders, recipe.folderId);
-            return <RecipePageNav {...routeProps} folder={folder} />
-          }}
-        // component={RecipePageMain}
+          component={RecipePageMain}
         />
         <Route
           path='/add-folder'
@@ -143,8 +119,8 @@ class App extends Component {
       folders: this.state.folders,
       recipes: this.state.recipes,
       addFolder: this.handleAddFolder,
-      addNote: this.handleAddRecipe,
-      deleteNote: this.handleDeleteRecipe,
+      addRecipe: this.handleAddRecipe,
+      deleteRecipe: this.handleDeleteRecipe,
     }
     return (
       <Context.Provider value={value}>
