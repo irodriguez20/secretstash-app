@@ -16,26 +16,29 @@ class AddRecipeForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        // const { name, folderid, time, description, ingredients, steps } = e.target;
-        // const newRecipe = {
-        //     name: name.value,
-        //     folderid: folderid.value,
-        //     time: time.value,
-        //     description: description.value,
-        //     ingredients: ingredients.value,
-        //     steps: steps.value,
-        // }
+        const { name, folderid, time, description, ingredients, steps } = e.target;
+        const recipe = {
+            id: 4,
+            name: name.value,
+            folderid: folderid.value,
+            time: time.value,
+            description: description.value,
+            ingredients: ingredients.value,
+            steps: steps.value,
+        }
+        console.log(recipe)
 
-        //     .then(recipe => {
+        //    const recipe = {
         //         name.value = "";
         //         time.value = "";
         //         folderid.value = "";
         //         description.value = "";
         //         ingredients.value = "";
         //         steps.value = "";
-        //         this.context.addRecipe(recipe)
-        //         this.props.history.push('/');
-        //     })
+        //     }
+        this.context.addRecipe(recipe)
+        this.props.history.push('/');
+
 
 
     }
@@ -87,13 +90,23 @@ class AddRecipeForm extends Component {
                         </select>
                     </div>
                     <div className="field">
+                        <label htmlFor="recipe-description-textarea">
+                            Description
+                            {' '}
+                        </label>
+                        <textarea
+                            name='description'
+                            id='description'
+                            required
+                        ></textarea>
+                    </div>
+                    <div className="field">
                         <label htmlFor="recipe-ingredients-textarea">
                             Ingredients
                             {' '}
                         </label>
                         <textarea
                             rows='7'
-                            type='text'
                             name='ingredients'
                             id='ingredients'
                             required
@@ -106,7 +119,6 @@ class AddRecipeForm extends Component {
                         </label>
                         <textarea
                             rows='15'
-                            type='text'
                             name='steps'
                             id='steps'
                             required></textarea>

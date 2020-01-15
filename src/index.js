@@ -13,6 +13,7 @@ library.add(faPlus, faChevronLeft, faTrashAlt, faBook)
 
 ReactDOM.render(
     <BrowserRouter>
+        {/* <LandingPage /> */}
         <App />
     </BrowserRouter>, document.getElementById('root')
 );

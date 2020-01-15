@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
+import App from '../App/App'
 import './LandingPage.css';
 
 class LandingPage extends Component {
@@ -9,9 +10,9 @@ class LandingPage extends Component {
             <div className="LandingPage">
                 <main>
                     <header className="LandingPage-title">
-                        <Link to='/recipes'>
-                            <h1>Secret Stash</h1>
-                        </Link>
+
+                        <h1>Secret Stash</h1>
+
                     </header>
                     <section>
                         <h3>Why Secret Stash</h3>
@@ -35,8 +36,13 @@ class LandingPage extends Component {
                         <p>[<em>placeholder for screenshot of how to share profile/recipe</em>]</p>
                         <p>To many times to count I have wanted a recipe from a family member and end up having to go through a handful of people before I can recieve it. Secret Stash eliminates the telephone game. Easily share family recipes with a simple click of a button.</p>
                     </section>
+                    <div>
+                        <button>
+                            <Link to='/'>Get Started</Link>
+                        </button>
+                    </div>
                 </main>
-            </div>
+            </div >
         );
     }
 }

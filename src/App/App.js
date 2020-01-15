@@ -30,6 +30,7 @@ class App extends Component {
     this.setState({
       folders: [
         ...this.state.folders,
+        folder
       ]
     })
   }
@@ -38,6 +39,7 @@ class App extends Component {
     this.setState({
       recipes: [
         ...this.state.recipes,
+        recipe
       ]
     })
   }
@@ -61,12 +63,11 @@ class App extends Component {
           />
         )}
         <Route
-
           path='/login'
           component={RecipePageMain}
         />
         <Route
-          path='/home'
+          path='/logout'
           component={LandingPage}
         />
         <Route
@@ -77,6 +78,11 @@ class App extends Component {
           path='/add-folder'
           component={RecipePageNav}
         />
+        {/* <Route
+
+          path='/home'
+          component={App}
+        /> */}
         <Route
 
           path='/add-recipe'
@@ -97,6 +103,16 @@ class App extends Component {
             component={RecipeListMain}
           />
         )}
+        {/* <Route
+
+          path='/home'
+          component={App}
+        /> */}
+        <Route
+          exact
+          path='/home'
+          component={LandingPage}
+        />
         <Route
           path='/recipe/:recipeId'
           component={RecipePageMain}
@@ -130,7 +146,7 @@ class App extends Component {
           </nav>
           <header className='App__header'>
             <h1>
-              <Link to='/'>Secret Stash</Link>
+              <Link to='/home'>Secret Stash</Link>
               {' '}
               <FontAwesomeIcon icon='book' />
             </h1>

@@ -15,8 +15,15 @@ class AddFolder extends Component {
     static contextType = Context;
 
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
+        const { foldername } = e.target
+        const folder = {
+            foldername: foldername.value
+        };
+        this.context.addFolder(folder);
+        this.props.history.push('/')
+
     }
 
     render() {
@@ -25,7 +32,7 @@ class AddFolder extends Component {
                 <header className="AddFolder">
                     <h1>Add a New Folder</h1>
                 </header>
-                <SecretStashForm onSubmit={this.context.addFolder}>
+                <SecretStashForm onSubmit={this.handleSubmit}>
                     <div className="field">
                         <label htmlFor="folder-name-input">Folder Name</label>
                         <input
