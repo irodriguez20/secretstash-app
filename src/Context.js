@@ -7,5 +7,5 @@ export default React.createContext({
     addFolder: () => { },
     addRecipe: () => { },
     deleteRecipe: () => { },
-    // updateRecipe: () => { },
+    updateRecipe: () => { },
 })

@@ -14,6 +14,7 @@ import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 import RecipePageMain from '../RecipePageMain/RecipePageMain'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getRecipesForFolder, findRecipe, findFolder } from '../recipes-helpers';
+import EditRecipe from '../EditRecipe/EditRecipe';
 
 
 class App extends Component {
@@ -125,6 +126,10 @@ class App extends Component {
           path='/add-recipe'
           component={AddRecipeForm}
         />
+        <Route
+          path='/edit/:recipeId'
+          component={EditRecipe}
+        />
       </>
     )
   }
@@ -137,6 +142,7 @@ class App extends Component {
       addFolder: this.handleAddFolder,
       addRecipe: this.handleAddRecipe,
       deleteRecipe: this.handleDeleteRecipe,
+      updateRecipe: this.updateRecipe,
     }
     return (
       <Context.Provider value={value}>
