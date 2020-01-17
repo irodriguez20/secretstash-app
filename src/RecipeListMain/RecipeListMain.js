@@ -29,7 +29,7 @@ class RecipeListMain extends Component {
                             <Recipe
                                 id={recipe.id}
                                 name={recipe.name}
-                                time={recipe.time}
+                                timeToMake={recipe.timeToMake}
                                 description={recipe.description}
                             />
                         </li>

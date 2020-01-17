@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 // import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 // import LoginForm from '../LoginForm/LoginForm';
-import STORE from '../STORE';
 import './App.css';
 import Context from '../Context';
 import LandingPage from '../LandingPage/LandingPage';
@@ -14,6 +13,7 @@ import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 import RecipePageMain from '../RecipePageMain/RecipePageMain'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getRecipesForFolder, findRecipe, findFolder } from '../recipes-helpers';
+import config from '../config'
 import EditRecipe from '../EditRecipe/EditRecipe';
 
 
@@ -24,7 +24,27 @@ class App extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState(STORE), 600)
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/recipes`),
+      fetch(`${config.API_ENDPOINT}/folders`)
+    ])
+      .then(([recipesRes, foldersRes]) => {
+        if (!recipesRes.ok)
+          return recipesRes.json().then(e => Promise.reject(e))
+        if (!foldersRes.ok)
+          return foldersRes.json().then(e => Promise.reject(e))
+
+        return Promise.all([
+          recipesRes.json(),
+          foldersRes.json(),
+        ])
+      })
+      .then(([recipes, folders]) => {
+        this.setState({ recipes, folders })
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
   handleAddFolder = folder => {

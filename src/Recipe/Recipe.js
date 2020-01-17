@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Context from '../Context'
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
+import config from '../config'
 import './Recipe.css'
 
 class Recipe extends Component {
@@ -16,19 +17,37 @@ class Recipe extends Component {
 
     handleClickDelete = e => {
         e.preventDefault();
-        console.log('clicked delete on recipe.js')
-        // const recipeId = this.props.id;
+        const recipeId = this.props.id;
+
+        fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            },
+        })
+            .then(res => {
+                if (!res.ok)
+                    return res.json().then(e => Promise.reject(e));
+            })
+            .then(() => {
+                this.context.deleteRecipe(recipeId);
+                this.props.history.push('/')
+            })
+
+            .catch(error => {
+                console.log({ error });
+            });
     }
 
     render() {
-        const { name, id, description, time } = this.props;
+        const { name, id, description, timeToMake } = this.props;
         return (
             <div className="Recipe">
                 <main>
                     <section>
                         <header className="Recipe__title">
                             <h2><Link to={`/recipe/${id}`}>{name}</Link></h2>
-                            <h3>{time}</h3>
+                            <h3>{timeToMake}</h3>
                         </header>
 
                         <blockquote>{description}</blockquote>

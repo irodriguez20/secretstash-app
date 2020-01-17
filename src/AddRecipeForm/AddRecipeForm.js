@@ -16,12 +16,12 @@ class AddRecipeForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        const { name, folderid, time, description, ingredients, steps } = e.target;
+        const { name, folderid, timeToMake, description, ingredients, steps } = e.target;
         const recipe = {
             id: 4,
             name: name.value,
             folderid: folderid.value,
-            time: time.value,
+            timeToMake: timeToMake.value,
             description: description.value,
             ingredients: ingredients.value,
             steps: steps.value,
@@ -30,7 +30,7 @@ class AddRecipeForm extends Component {
 
         //    const recipe = {
         //         name.value = "";
-        //         time.value = "";
+        //         timeToMake.value = "";
         //         folderid.value = "";
         //         description.value = "";
         //         ingredients.value = "";
@@ -64,14 +64,14 @@ class AddRecipeForm extends Component {
                         />
                     </div>
                     <div className="field">
-                        <label htmlFor="recipe-time-input">
-                            Estimated Time
+                        <label htmlFor="recipe-timeToMake-input">
+                            Estimated timeToMake
                             {' '}
                         </label>
                         <input
                             type='text'
-                            name='time'
-                            id='time'
+                            name='timeToMake'
+                            id='timeToMake'
                             required
                         />
                     </div>

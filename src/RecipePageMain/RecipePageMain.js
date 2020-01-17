@@ -29,10 +29,13 @@ class RecipePageMain extends Component {
                 <Recipe
                     id={recipe.id}
                     name={recipe.name}
-                    time={recipe.time}
+                    timeToMake={recipe.timeToMake}
                     ingredients={recipe.ingredients}
                     description={recipe.description}
                     steps={recipe.steps}
+                    onDeleteRecipe={this.handleDeleteRecipe}
+                    history={this.props.history}
+
                 />
                 <section>
                     <div className='RecipePageMain__ingredients'>
