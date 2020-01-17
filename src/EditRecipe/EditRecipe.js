@@ -20,7 +20,7 @@ class EditRecipe extends Component {
     state = {
         id: "",
         name: "",
-        timeToMake: "",
+        timetomake: "",
         description: "",
         folderid: 1,
         ingredients: "",
@@ -29,12 +29,12 @@ class EditRecipe extends Component {
 
     componentDidMount() {
         const { recipeId } = this.props.match.params;
-        const { id, name, description, timeToMake, steps, folderid, ingredients } = this.state;
+        const { id, name, description, timetomake, steps, folderid, ingredients } = this.state;
 
         this.setState({
             id: id,
             name: name,
-            timeToMake: timeToMake,
+            timetomake: timetomake,
             description: description,
             folderid: folderid,
             steps: steps,
@@ -48,8 +48,8 @@ class EditRecipe extends Component {
         this.setState({ name: e.target.value });
     }
 
-    handleChangetimeToMake = e => {
-        this.setState({ timeToMake: e.target.value });
+    handleChangetimetomake = e => {
+        this.setState({ timetomake: e.target.value });
     }
 
     handleChangeDescription = e => {
@@ -71,8 +71,8 @@ class EditRecipe extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const { recipeId } = this.props.match.params;
-        const { id, name, description, timeToMake, steps, folderid, ingredients } = this.state;
-        const updatedRecipe = { id, name, description, timeToMake, steps, folderid, ingredients };
+        const { id, name, description, timetomake, steps, folderid, ingredients } = this.state;
+        const updatedRecipe = { id, name, description, timetomake, steps, folderid, ingredients };
 
         this.resetFields(updatedRecipe);
         this.context.updateRecipe(updatedRecipe);
@@ -85,7 +85,7 @@ class EditRecipe extends Component {
         this.setState({
             id: newFields.id || "",
             name: newFields.name || "",
-            timeToMake: newFields.timeToMake || "",
+            timetomake: newFields.timetomake || "",
             description: newFields.description || "",
             folderid: newFields.folderid || "",
             ingredients: newFields.ingredients || "",
@@ -98,7 +98,7 @@ class EditRecipe extends Component {
     };
 
     render() {
-        const { name, folderid, timeToMake, description, ingredients, steps } = this.state;
+        const { name, folderid, timetomake, description, ingredients, steps } = this.state;
         const { folders = [] } = this.context;
         return (
             <section className="EditRecipe">
@@ -121,15 +121,15 @@ class EditRecipe extends Component {
                         />
                     </div>
                     <div className="field">
-                        <label htmlFor="recipe-timeToMake-input">
+                        <label htmlFor="recipe-timetomake-input">
                             Estimated Time
                             {' '}
                         </label>
                         <input
                             type='text'
-                            name='timeToMake'
-                            id='timeToMake'
-                            value={timeToMake}
+                            name='timetomake'
+                            id='timetomake'
+                            value={timetomake}
                             onChange={this.handleChangeTime}
                             required
                         />

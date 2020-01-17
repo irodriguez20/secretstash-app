@@ -29,7 +29,7 @@ class RecipePageMain extends Component {
                 <Recipe
                     id={recipe.id}
                     name={recipe.name}
-                    timeToMake={recipe.timeToMake}
+                    timetomake={recipe.timetomake}
                     ingredients={recipe.ingredients}
                     description={recipe.description}
                     steps={recipe.steps}

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Context from '../Context'
 import SecretStashForm from '../SecretStashForm/SecretStashForm'
 import './AddRecipeForm.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import config from '../config';
 
 class AddRecipeForm extends Component {
     static propTypes = {
@@ -16,32 +17,44 @@ class AddRecipeForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        const { name, folderid, timeToMake, description, ingredients, steps } = e.target;
-        const recipe = {
+        const { name, folderid, timetomake, description, ingredients, steps } = e.target;
+        const newRecipe = {
             id: 4,
             name: name.value,
             folderid: folderid.value,
-            timeToMake: timeToMake.value,
+            timetomake: timetomake.value,
             description: description.value,
             ingredients: ingredients.value,
             steps: steps.value,
         }
-        console.log(recipe)
 
-        //    const recipe = {
-        //         name.value = "";
-        //         timeToMake.value = "";
-        //         folderid.value = "";
-        //         description.value = "";
-        //         ingredients.value = "";
-        //         steps.value = "";
-        //     }
-        this.context.addRecipe(recipe)
-        this.props.history.push('/');
-
-
-
-    }
+        fetch(`${config.API_ENDPOINT}/recipes`, {
+            method: "POST",
+            body: JSON.stringify(newRecipe),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(e => Promise.reject(e));
+                }
+                return res.json();
+            })
+            .then(recipe => {
+                name.value = "";
+                timetomake.value = "";
+                folderid.value = "";
+                description.value = "";
+                ingredients.value = "";
+                steps.value = "";
+                this.context.addRecipe(recipe)
+                this.props.history.push('/');
+            })
+            .catch(error => {
+                console.error({ error });
+            });
+    };
 
     render() {
         const { folders = [] } = this.context;
@@ -64,14 +77,14 @@ class AddRecipeForm extends Component {
                         />
                     </div>
                     <div className="field">
-                        <label htmlFor="recipe-timeToMake-input">
-                            Estimated timeToMake
+                        <label htmlFor="recipe-timetomake-input">
+                            Estimated timetomake
                             {' '}
                         </label>
                         <input
                             type='text'
-                            name='timeToMake'
-                            id='timeToMake'
+                            name='timetomake'
+                            id='timetomake'
                             required
                         />
                     </div>

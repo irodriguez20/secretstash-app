@@ -40,14 +40,14 @@ class Recipe extends Component {
     }
 
     render() {
-        const { name, id, description, timeToMake } = this.props;
+        const { name, id, description, timetomake } = this.props;
         return (
             <div className="Recipe">
                 <main>
                     <section>
                         <header className="Recipe__title">
                             <h2><Link to={`/recipe/${id}`}>{name}</Link></h2>
-                            <h3>{timeToMake}</h3>
+                            <h3>{timetomake}</h3>
                         </header>
 
                         <blockquote>{description}</blockquote>
