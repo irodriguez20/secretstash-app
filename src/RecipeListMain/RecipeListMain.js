@@ -31,7 +31,9 @@ class RecipeListMain extends Component {
                                 name={recipe.name}
                                 timetomake={recipe.timetomake}
                                 description={recipe.description}
+                                history={this.props.history}
                             />
+                            <Link to={`/edit/${recipe.id}`}></Link>
                         </li>
                     )}
                 </ul>

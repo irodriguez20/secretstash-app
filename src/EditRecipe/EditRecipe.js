@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SecretStashForm from '../SecretStashForm/SecretStashForm'
 import Context from '../Context'
+import config from '../config'
 import PropTypes from 'prop-types'
-import { countRecipesForFolder } from '../recipes-helpers'
 import './EditRecipe.css'
 
 class EditRecipe extends Component {
@@ -29,19 +29,29 @@ class EditRecipe extends Component {
 
     componentDidMount() {
         const { recipeId } = this.props.match.params;
-        const { id, name, description, timetomake, steps, folderid, ingredients } = this.state;
-
-        this.setState({
-            id: id,
-            name: name,
-            timetomake: timetomake,
-            description: description,
-            folderid: folderid,
-            steps: steps,
-            ingredients: ingredients
-        });
-        console.log('in componentDidMount', recipeId)
-
+        fetch(config.API_ENDPOINT + `/recipes/${recipeId}`, {
+            method: "GET",
+        })
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => Promise.reject(error));
+                }
+                return res.json();
+            })
+            .then(responseData => {
+                this.setState({
+                    id: responseData.id,
+                    name: responseData.name,
+                    timetomake: responseData.timetomake,
+                    description: responseData.description,
+                    folderid: responseData.folderid,
+                    steps: responseData.steps,
+                    ingredients: responseData.ingredients
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     handleChangeName = e => {
@@ -74,12 +84,25 @@ class EditRecipe extends Component {
         const { id, name, description, timetomake, steps, folderid, ingredients } = this.state;
         const updatedRecipe = { id, name, description, timetomake, steps, folderid, ingredients };
 
-        this.resetFields(updatedRecipe);
-        this.context.updateRecipe(updatedRecipe);
-        this.props.history.push('/');
-
-        console.log('in handleSubmit');
-    }
+        fetch(config.API_ENDPOINT + `/recipes/${recipeId}`, {
+            method: "PATCH",
+            body: JSON.stringify(updatedRecipe),
+            headers: {
+                "content-type": "application/json"
+            },
+        })
+            .then(res => {
+                if (!res.ok) return res.json().then(error => Promise.reject(error));
+            })
+            .then(() => {
+                this.resetFields(updatedRecipe);
+                this.context.updateRecipe(updatedRecipe);
+                this.props.history.push('/');
+            })
+            .catch(error => {
+                console.error({ error })
+            });
+    };
 
     resetFields = (newFields) => {
         this.setState({
@@ -130,7 +153,7 @@ class EditRecipe extends Component {
                             name='timetomake'
                             id='timetomake'
                             value={timetomake}
-                            onChange={this.handleChangeTime}
+                            onChange={this.handleChangetimetomake}
                             required
                         />
                     </div>

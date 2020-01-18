@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-// import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
-// import LoginForm from '../LoginForm/LoginForm';
 import './App.css';
 import Context from '../Context';
 import LandingPage from '../LandingPage/LandingPage';
@@ -12,7 +10,7 @@ import AddFolder from '../AddFolder/AddFolder';
 import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 import RecipePageMain from '../RecipePageMain/RecipePageMain'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getRecipesForFolder, findRecipe, findFolder } from '../recipes-helpers';
+import { countRecipesForFolder } from '../recipes-helpers';
 import config from '../config'
 import EditRecipe from '../EditRecipe/EditRecipe';
 
@@ -72,6 +70,17 @@ class App extends Component {
     })
   }
 
+  updateRecipe = updatedRecipe => {
+    this.setState({
+      recipes: this.state.recipes.map(recipe =>
+        (recipe.id !== updatedRecipe.id)
+          ? recipe
+          : updatedRecipe
+      )
+    })
+    countRecipesForFolder(updatedRecipe.folderid)
+  }
+
   renderNavRoutes() {
     return (
       <>
@@ -99,11 +108,6 @@ class App extends Component {
           path='/add-folder'
           component={RecipePageNav}
         />
-        {/* <Route
-
-          path='/home'
-          component={App}
-        /> */}
         <Route
 
           path='/add-recipe'
@@ -124,11 +128,6 @@ class App extends Component {
             component={RecipeListMain}
           />
         )}
-        {/* <Route
-
-          path='/home'
-          component={App}
-        /> */}
         <Route
           exact
           path='/home'

@@ -145,4 +145,8 @@ class AddRecipeForm extends Component {
     }
 }
 
+AddRecipeForm.defaultProps = {
+    history: PropTypes.Object
+};
+
 export default AddRecipeForm;

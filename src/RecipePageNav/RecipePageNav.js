@@ -21,7 +21,7 @@ class RecipePageNav extends Component {
         const { recipes, folders } = this.context
         const { recipeId } = this.props.match.params
         const recipe = findRecipe(recipes, recipeId) || {}
-        const folder = findFolder(folders, recipe.recipeId)
+        const folder = findFolder(folders, recipe.folderid)
         return (
             <div className='RecipePageNav'>
                 <CircleButton

@@ -30,6 +30,7 @@ class Recipe extends Component {
                     return res.json().then(e => Promise.reject(e));
             })
             .then(() => {
+                console.log(this.props)
                 this.context.deleteRecipe(recipeId);
                 this.props.history.push('/')
             })
@@ -43,25 +44,27 @@ class Recipe extends Component {
         const { name, id, description, timetomake } = this.props;
         return (
             <div className="Recipe">
-                <main>
-                    <section>
-                        <header className="Recipe__title">
-                            <h2><Link to={`/recipe/${id}`}>{name}</Link></h2>
-                            <h3>{timetomake}</h3>
-                        </header>
+                <section>
+                    <header className="Recipe__title">
+                        <h2><Link to={`/recipe/${id}`}>{name}</Link></h2>
+                        <h3>{timetomake}</h3>
+                    </header>
 
-                        <blockquote>{description}</blockquote>
-                        <Link to={`/edit/${id}`}>
-                            <button type="edit">Edit</button>
-                        </Link>
+                    <blockquote>{description}</blockquote>
+                    <Link to={`/edit/${id}`}>
+                        <button type="edit">Edit</button>
+                    </Link>
 
-                        <button className='Recipe__delete' onClick={this.handleClickDelete} type="button">
-                            <FontAwesomeIcon icon="trash-alt" />
-                            {" "}
-                            Delete
+                    <button
+                        className='Recipe__delete'
+                        onClick={this.handleClickDelete}
+                        type="button"
+                    >
+                        <FontAwesomeIcon icon="trash-alt" />
+                        {" "}
+                        Delete
                        </button>
-                    </section>
-                </main>
+                </section>
             </div>
         );
     }

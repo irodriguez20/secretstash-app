@@ -3,7 +3,7 @@ import Recipe from '../Recipe/Recipe'
 import Context from '../Context'
 import { findRecipe } from '../recipes-helpers'
 import './RecipePageMain.css'
-import { findAllByPlaceholderText } from '@testing-library/react';
+
 
 class RecipePageMain extends Component {
     static defaultProps = {
@@ -14,9 +14,6 @@ class RecipePageMain extends Component {
 
     static contextType = Context;
 
-    handleDeleteRecipe = recipeId => {
-        this.props.history.push('/')
-    }
 
     render() {
         const { recipes = [] } = this.context
@@ -33,7 +30,6 @@ class RecipePageMain extends Component {
                     ingredients={recipe.ingredients}
                     description={recipe.description}
                     steps={recipe.steps}
-                    onDeleteRecipe={this.handleDeleteRecipe}
                     history={this.props.history}
 
                 />

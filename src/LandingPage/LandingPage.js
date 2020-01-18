@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
-import App from '../App/App'
+import { Link } from 'react-router-dom'
 import './LandingPage.css';
 
 class LandingPage extends Component {
