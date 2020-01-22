@@ -10,7 +10,6 @@ import AddFolder from '../AddFolder/AddFolder';
 import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 import RecipePageMain from '../RecipePageMain/RecipePageMain'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { countRecipesForFolder } from '../recipes-helpers';
 import config from '../config'
 import EditRecipe from '../EditRecipe/EditRecipe';
 
@@ -78,7 +77,6 @@ class App extends Component {
           : updatedRecipe
       )
     })
-    countRecipesForFolder(updatedRecipe.folderid)
   }
 
   renderNavRoutes() {
