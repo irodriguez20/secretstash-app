@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe component  renders a .Recipe by default 1`] = `
+<div
+  className="Recipe"
+>
+  <section>
+    <header
+      className="Recipe__title"
+    >
+      <h2>
+        <Link
+          to="/recipe/undefined"
+        />
+      </h2>
+      <h3 />
+    </header>
+    <blockquote />
+    <Link
+      to="/edit/undefined"
+    >
+      <button
+        type="edit"
+      >
+        Edit
+      </button>
+    </Link>
+    <button
+      className="Recipe__delete"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="trash-alt"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        swapOpacity={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+       
+      Delete
+    </button>
+  </section>
+</div>
+`;
+
+exports[`Recipe component  renders the Recipe given props 1`] = `
+<div
+  className="Recipe"
+>
+  <section>
+    <header
+      className="Recipe__title"
+    >
+      <h2>
+        <Link
+          to="/recipe/a"
+        >
+          test-class-name
+        </Link>
+      </h2>
+      <h3>
+        test-time-to-make
+      </h3>
+    </header>
+    <blockquote>
+      test description
+    </blockquote>
+    <Link
+      to="/edit/a"
+    >
+      <button
+        type="edit"
+      >
+        Edit
+      </button>
+    </Link>
+    <button
+      className="Recipe__delete"
+      onClick={[Function]}
+      type="button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon="trash-alt"
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        swapOpacity={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+       
+      Delete
+    </button>
+  </section>
+</div>
+`;

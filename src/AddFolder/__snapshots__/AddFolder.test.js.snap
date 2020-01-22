@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddItemForm component renders the complete form 1`] = `
+<div>
+  <header
+    className="AddFolder"
+  >
+    <h1>
+      Add a New Folder
+    </h1>
+  </header>
+  <SecreStashForm
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="folder-name-input"
+      >
+        Folder Name
+      </label>
+      <input
+        id="foldername"
+        name="foldername"
+        placeholder="Breakfast"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </div>
+  </SecreStashForm>
+</div>
+`;

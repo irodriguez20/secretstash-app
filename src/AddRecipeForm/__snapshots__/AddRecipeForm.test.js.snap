@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRecipeForm component renders the complete form 1`] = `
+<section
+  className="AddRecipe"
+>
+  <header
+    className="AddRecipe"
+  >
+    <h1>
+      Add a New Memory
+    </h1>
+  </header>
+  <SecreStashForm
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="recipe-name-input"
+      >
+        Recipe Name
+         
+      </label>
+      <input
+        id="name"
+        name="name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="recipe-timetomake-input"
+      >
+        Estimated timetomake
+         
+      </label>
+      <input
+        id="timetomake"
+        name="timetomake"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="recipe-folder-select"
+      >
+        Folder
+         
+      </label>
+      <select
+        id="folderid"
+        name="folderid"
+        required={true}
+      >
+        <option
+          value={null}
+        >
+          ...
+        </option>
+      </select>
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="recipe-description-textarea"
+      >
+        Description
+         
+      </label>
+      <textarea
+        id="description"
+        name="description"
+        required={true}
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="recipe-ingredients-textarea"
+      >
+        Ingredients
+         
+      </label>
+      <textarea
+        id="ingredients"
+        name="ingredients"
+        required={true}
+        rows="7"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="steps"
+      >
+        Steps
+         
+      </label>
+      <textarea
+        id="steps"
+        name="steps"
+        required={true}
+        rows="15"
+      />
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </div>
+  </SecreStashForm>
+</section>
+`;

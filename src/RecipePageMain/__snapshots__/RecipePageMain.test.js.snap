@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipePageMain component renders a .RecipePageMain by default 1`] = `
+<section
+  className="RecipePageMain"
+>
+  <Recipe />
+  <section>
+    <div
+      className="RecipePageMain__ingredients"
+    >
+      <ul>
+        <li />
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div
+      className="RecipePageMain__steps"
+    >
+      <blockquote />
+    </div>
+  </section>
+</section>
+`;
