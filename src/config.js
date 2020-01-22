@@ -1,3 +1,3 @@
 module.exports = {
-    API_ENDPOINT: `http://localhost:8000/api`
+    API_ENDPOINT: `https://aqueous-tor-18320.herokuapp.com/api`
 }
