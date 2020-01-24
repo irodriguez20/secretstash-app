@@ -9,10 +9,9 @@ import RecipeListMain from '../RecipeListMain/RecipeListMain'
 import AddFolder from '../AddFolder/AddFolder';
 import AddRecipeForm from '../AddRecipeForm/AddRecipeForm';
 import RecipePageMain from '../RecipePageMain/RecipePageMain'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import config from '../config'
 import EditRecipe from '../EditRecipe/EditRecipe';
-import Logo from '../Logo.png'
+import Logo from '../logo_transparent.png'
 
 
 class App extends Component {

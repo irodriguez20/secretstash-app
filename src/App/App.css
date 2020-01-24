@@ -47,21 +47,26 @@
 }
 
 .Logo {
-  border: 1px solid #241a17;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
   position: fixed;
+  width: auto;
+  height: 150px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
   .Logo {
-    width: 100px;
+    width: auto;
+    height: 100px;
   }
 }
 @media only screen and (max-height: 812px) {
   .Logo {
     height: 100px;
+    width: auto;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .Logo {
+    height: 200px;
     width: auto;
   }
 }

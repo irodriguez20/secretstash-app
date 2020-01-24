@@ -52,7 +52,11 @@ class Recipe extends Component {
 
                     <blockquote className='Recipe__description'>{description}</blockquote>
                     <Link to={`/edit/${id}`}>
-                        <button className='Recipe__edit' type="edit">Edit</button>
+                        <button className='Recipe__edit' type="edit">
+                            <FontAwesomeIcon icon="edit" />
+                            {" "}
+                            Edit
+                            </button>
                     </Link>
 
                     <button
