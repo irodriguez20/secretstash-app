@@ -1,5 +1,14 @@
-.LandingPage {
+.LandingPage h3 {
+  color: #ffffff;
+}
+
+.LandingPage h1 {
   color: #181417;
+}
+.LandingPage p {
+  /* color: #181417; */
+  color: #181417;
+  font-size: 17px;
 }
 
 .LandingPage__main {

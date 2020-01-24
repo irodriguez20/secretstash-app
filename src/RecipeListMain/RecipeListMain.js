@@ -22,9 +22,10 @@ class RecipeListMain extends Component {
         const recipesForFolder = getRecipesForFolder(recipes, folderId)
 
         return (
-            <section className='RecipeListMain'>
-                <ul>
+            <div className='RecipeListMain'>
+                <ul className='RecipeListMain__recipe-list'>
                     {recipesForFolder.map(recipe =>
+
                         <li key={recipe.id}>
                             <Recipe
                                 id={recipe.id}
@@ -33,8 +34,9 @@ class RecipeListMain extends Component {
                                 description={recipe.description}
                                 history={this.props.history}
                             />
-                            <Link to={`/edit/${recipe.id}`}></Link>
+                            <Link className='RecipeListMain__edit-recipe-link' to={`/edit/${recipe.id}`}></Link>
                         </li>
+
                     )}
                 </ul>
                 <div className='RecipeListMain__button-container'>
@@ -49,7 +51,7 @@ class RecipeListMain extends Component {
                         Recipe
                     </CircleButton>
                 </div>
-            </section>
+            </div >
         );
     }
 }

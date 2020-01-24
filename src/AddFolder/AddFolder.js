@@ -50,7 +50,7 @@ class AddFolder extends Component {
                     <h1>Add a New Folder</h1>
                 </header>
                 <SecretStashForm onSubmit={this.handleSubmit}>
-                    <div className="field">
+                    <div className="AddFolder__field">
                         <label htmlFor="folder-name-input">Folder Name</label>
                         <input
                             placeholder='Breakfast'
@@ -60,8 +60,8 @@ class AddFolder extends Component {
                             required
                         />
                     </div>
-                    <div className='buttons'>
-                        <button type='submit'>Add</button>
+                    <div className='AddFolder__buttons'>
+                        <button className='AddFolder__submit-button' type='submit'>Add</button>
                     </div>
                 </SecretStashForm>
             </div>

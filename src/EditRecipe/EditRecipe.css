@@ -1,7 +1,29 @@
-.UpdateNote {
-  color: #dedede;
+.EditRecipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.UpdateNote h1 {
+.EditRecipe input,
+textarea {
+  border-radius: 3px;
+}
+
+.EditRecipe__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.EditRecipe__cancel-button:hover {
+  background-color: #c8556a;
+}
+
+.EditRecipe header {
+  color: #443843;
+}
+
+.EditRecipe h1 {
   margin-left: 18px;
 }

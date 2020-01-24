@@ -8,6 +8,15 @@
   color: #443843;
 }
 
+.AddRecipe label {
+  color: #000000;
+}
+
+.ARecipe input,
+textarea {
+  border-radius: 3px;
+}
+
 .AddRecipe h1 {
   margin-left: 18px;
 }

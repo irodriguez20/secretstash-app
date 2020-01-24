@@ -125,11 +125,11 @@ class EditRecipe extends Component {
         const { folders = [] } = this.context;
         return (
             <section className="EditRecipe">
-                <header className="EditRecipe">
+                <header className="EditRecipe__header">
                     <h1>Update Recipe</h1>
                 </header>
                 <SecretStashForm onSubmit={this.handleSubmit}>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor="recipe-name-input">
                             Recipe Name
                             {' '}
@@ -143,7 +143,7 @@ class EditRecipe extends Component {
                             required
                         />
                     </div>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor="recipe-timetomake-input">
                             Estimated Time
                             {' '}
@@ -157,7 +157,7 @@ class EditRecipe extends Component {
                             required
                         />
                     </div>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor='recipe-folder-select'>
                             Folder
                             {' '}
@@ -176,7 +176,7 @@ class EditRecipe extends Component {
                             ))}
                         </select>
                     </div>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor="recipe-description-textarea">
                             Description
                             {' '}
@@ -189,7 +189,7 @@ class EditRecipe extends Component {
                             required
                         ></textarea>
                     </div>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor="recipe-ingredients-textarea">
                             Ingredients
                             {' '}
@@ -203,7 +203,7 @@ class EditRecipe extends Component {
                             required
                         ></textarea>
                     </div>
-                    <div className="field">
+                    <div className="EditRecipe__field">
                         <label htmlFor="steps">
                             Steps
                             {' '}
@@ -216,11 +216,11 @@ class EditRecipe extends Component {
                             onChange={this.handleChangeSteps}
                             required></textarea>
                     </div>
-                    <div className='buttons'>
-                        <button type='button' onClick={this.handleClickCancel}>Cancel
+                    <div className='EditRecipe__buttons'>
+                        <button className='EditRecipe__cancel-button' type='button' onClick={this.handleClickCancel}>Cancel
                     </button>
                         {" "}
-                        <button type='submit'>Update recipe</button>
+                        <button className='EditRecipe__update-button' type='submit'>Update recipe</button>
                     </div>
                 </SecretStashForm>
             </section>
