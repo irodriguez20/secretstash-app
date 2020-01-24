@@ -4,7 +4,7 @@
     sans-serif;
   display: grid;
   justify-content: center;
-  grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+  grid-template-areas: "sidebar header" "sidebar main";
   grid-template-columns: 1fr 2.3fr;
   grid-template-rows: 120px 1fr;
   min-height: 100vh;
@@ -64,8 +64,4 @@
     height: 100px;
     width: auto;
   }
-}
-
-.App__footer {
-  grid-area: footer;
 }

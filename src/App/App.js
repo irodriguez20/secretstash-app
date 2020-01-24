@@ -181,7 +181,6 @@ class App extends Component {
           <main className='App__main'>
             {this.renderMainRoutes()}
           </main>
-          <footer className="App__footer">Footer</footer>
         </div>
       </Context.Provider>
     );

@@ -50,7 +50,7 @@ class Recipe extends Component {
                         <h3>{timetomake}</h3>
                     </header>
 
-                    <blockquote>{description}</blockquote>
+                    <blockquote className='Recipe__description'>{description}</blockquote>
                     <Link to={`/edit/${id}`}>
                         <button className='Recipe__edit' type="edit">Edit</button>
                     </Link>
