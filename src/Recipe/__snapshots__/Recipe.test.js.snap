@@ -20,6 +20,7 @@ exports[`Recipe component  renders a .Recipe by default 1`] = `
       to="/edit/undefined"
     >
       <button
+        className="Recipe__edit"
         type="edit"
       >
         Edit
@@ -82,6 +83,7 @@ exports[`Recipe component  renders the Recipe given props 1`] = `
       to="/edit/a"
     >
       <button
+        className="Recipe__edit"
         type="edit"
       >
         Edit

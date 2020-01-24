@@ -3,14 +3,16 @@
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   display: grid;
-  grid-template-areas: "sidebar header" "sidebar main";
+  justify-content: center;
+  grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
   grid-template-columns: 1fr 2.3fr;
   grid-template-rows: 120px 1fr;
   min-height: 100vh;
 }
 
 .App__nav {
-  background-color: #664040;
+  background-image: url(../a-dark-and-moody-macaron-pyramid.jpg);
+  background-size: cover;
   color: #fff;
   grid-area: sidebar;
   height: 100vh;
@@ -18,22 +20,52 @@
 }
 
 .App__header {
-  background-color: #f2f2f2;
-  color: #09d3ac;
+  background: #f8f3f3;
   font-family: var(--custom-font);
   grid-area: header;
   padding-left: 16px;
   padding-top: 32px;
-  text-shadow: 2px 1px 2px black;
+  /* text-shadow: 2px 1px 2px black; */
 }
 
-.App__header a {
-  color: #4f7302;
+.App__header_link:link,
+.App__header_link:visited {
+  text-decoration: none;
+  color: #312730;
+}
+
+.App__header_link:hover {
+  color: #c8556a;
 }
 
 .App__main {
-  background-color: #7e5151;
+  background: #f8f3f3;
+  background-size: cover;
   grid-area: main;
   height: calc(100vh - 120px);
   overflow: auto;
+}
+
+.Logo {
+  border: 1px solid #241a17;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  position: fixed;
+}
+
+@media only screen and (max-width: 375px) {
+  .Logo {
+    width: 100px;
+  }
+}
+@media only screen and (max-height: 812px) {
+  .Logo {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.App__footer {
+  grid-area: footer;
 }

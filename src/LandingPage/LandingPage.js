@@ -7,7 +7,7 @@ class LandingPage extends Component {
     render() {
         return (
             <div className="LandingPage">
-                <main>
+                <main className="LandingPage__main">
                     <header className="LandingPage-title">
 
                         <h1>Secret Stash</h1>

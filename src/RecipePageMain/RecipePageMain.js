@@ -35,11 +35,13 @@ class RecipePageMain extends Component {
                 />
                 <section>
                     <div className='RecipePageMain__ingredients'>
+                        <h4>Ingredients</h4>
                         <ul><li>{recipe.ingredients}</li></ul>
                     </div>
                 </section>
                 <section>
                     <div className='RecipePageMain__steps'>
+                        <h4>Steps</h4>
                         <blockquote>{recipe.steps}</blockquote>
                     </div>
                 </section>

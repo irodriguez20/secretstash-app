@@ -5,7 +5,7 @@ exports[`AddRecipeForm component renders the complete form 1`] = `
   className="AddRecipe"
 >
   <header
-    className="AddRecipe"
+    className="AddRecipe__header"
   >
     <h1>
       Add a New Memory

@@ -20,10 +20,10 @@ class RecipeListNav extends Component {
                                 className="RecipeListNav__folder-link"
                                 to={`/folder/${folder.id}`}
                             >
+                                {folder.foldername}
                                 <span className="RecipeListNav__num-recipes">
                                     {countRecipesForFolder(recipes, folder.id)}
                                 </span>
-                                {folder.foldername}
                             </NavLink>
                         </li>
                     )}

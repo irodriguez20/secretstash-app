@@ -9,6 +9,9 @@ exports[`RecipePageMain component renders a .RecipePageMain by default 1`] = `
     <div
       className="RecipePageMain__ingredients"
     >
+      <h4>
+        Ingredients
+      </h4>
       <ul>
         <li />
       </ul>
@@ -18,6 +21,9 @@ exports[`RecipePageMain component renders a .RecipePageMain by default 1`] = `
     <div
       className="RecipePageMain__steps"
     >
+      <h4>
+        Steps
+      </h4>
       <blockquote />
     </div>
   </section>

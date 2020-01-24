@@ -1,11 +1,12 @@
 .RecipePageMain {
-  background-color: #efefef;
+  background-color: #f8f3f3;
   height: 100%;
   padding: 10px;
   width: 100%;
 }
 
-.RecipePageMain__content {
-  color: #3a3939;
+.RecipePageMain__ingredients,
+.RecipePageMain__steps {
+  color: #181417;
   max-width: 380px;
 }

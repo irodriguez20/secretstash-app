@@ -45,8 +45,8 @@ class AddFolder extends Component {
 
     render() {
         return (
-            <div>
-                <header className="AddFolder">
+            <div className="AddFolder">
+                <header className="AddFolder__header">
                     <h1>Add a New Folder</h1>
                 </header>
                 <SecretStashForm onSubmit={this.handleSubmit}>

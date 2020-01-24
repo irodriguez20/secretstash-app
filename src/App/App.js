@@ -12,6 +12,7 @@ import RecipePageMain from '../RecipePageMain/RecipePageMain'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import config from '../config'
 import EditRecipe from '../EditRecipe/EditRecipe';
+import Logo from '../Logo.png'
 
 
 class App extends Component {
@@ -165,19 +166,22 @@ class App extends Component {
       <Context.Provider value={value}>
         <div className="App">
           <nav className='App__nav'>
+            <Link to='/home'><img className='Logo' src={Logo} alt="Logo" /></Link>
+            {' '}
+            {/* <FontAwesomeIcon icon='book' /> */}
             {this.renderNavRoutes()}
           </nav>
-          <header className='App__header'>
+          <header className="App__header">
             <h1>
-              <Link to='/home'>Secret Stash</Link>
-              {' '}
-              <FontAwesomeIcon icon='book' />
+              <Link className="App__header_link" to='/'>
+                Your Recipes
+            </Link>
             </h1>
           </header>
           <main className='App__main'>
             {this.renderMainRoutes()}
           </main>
-          <footer className="content-info">Footer</footer>
+          <footer className="App__footer">Footer</footer>
         </div>
       </Context.Provider>
     );

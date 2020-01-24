@@ -1,19 +1,21 @@
 .Recipe {
   --recipe-height: 88px;
-  background-color: #010d1e;
-  color: #4698db;
+  background-color: #8a6f78;
+  color: #181417;
   height: var(--note-height);
   margin-bottom: 8px;
   max-width: 380px;
   padding: 8px 0 8px 8px;
+  border-radius: 3px;
   position: relative;
 }
 
 .Recipe__delete {
   --recipe-button-height: 32px;
-  background-color: #041a3a;
+  background-color: rgb(27, 27, 61);
   border: 0;
-  color: #bdbcbc;
+  border-radius: 3px;
+  color: #f0ebeb;
   float: right;
   font-size: 12px;
   height: var(--recipe-button-height);
@@ -24,7 +26,28 @@
   width: calc(var(--recipe-height));
 }
 .Recipe__delete:hover {
-  background-color: #bd0909;
+  background-color: #c8556a;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Recipe__edit {
+  --recipe-button-height: 32px;
+  background-color: rgb(27, 27, 61);
+  border: 0;
+  border-radius: 3px;
+  color: #f0ebeb;
+  width: 50px;
+  /* float: left; */
+  font-size: 12px;
+  height: var(--recipe-button-height);
+  /* position: static; */
+  top: calc((var(--recipe-button-height) + 32px) * -1);
+}
+
+.Recipe__edit:hover {
+  background-color: #c8556a;
   color: white;
   cursor: pointer;
   font-weight: bold;
@@ -38,10 +61,10 @@
   min-height: 24px;
 }
 .Recipe__title a {
-  color: #cacaca;
+  color: #ffffff;
   display: block;
   text-decoration: none;
 }
 .Recipe__title a:hover {
-  color: #ffb72f;
+  color: #f5e553;
 }

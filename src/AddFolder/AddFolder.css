@@ -1,8 +1,16 @@
 .AddFolder {
-  color: #dedede;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .AddFolder h1 {
   margin-left: 18px;
-  color: #dedede;
+  color: #443843;
+}
+
+@media only screen and (max-width: 380px) {
+  .AddFolder h1 {
+    text-align: center;
+  }
 }

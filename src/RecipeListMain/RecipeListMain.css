@@ -13,6 +13,6 @@
   margin: 0 auto 20px;
 }
 .RecipeListMain__add-recipe-button:hover {
-  background-color: teal;
-  color: white;
+  background-color: #c8556a;
+  color: whitesmoke;
 }

@@ -2,11 +2,11 @@
   margin: 45px 20px 25px auto;
 }
 .RecipePageNav__back-button:hover {
-  background-color: #ffb72f;
+  background-color: #c8556a;
 }
 
 .RecipePageNav__folder-name {
-  color: #b5b3b3;
+  color: whitesmoke;
   font-family: var(--custom-font);
   font-size: 40px;
   height: 50vh;

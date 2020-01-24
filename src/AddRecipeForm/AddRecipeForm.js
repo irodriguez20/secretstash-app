@@ -60,7 +60,7 @@ class AddRecipeForm extends Component {
         const { folders = [] } = this.context;
         return (
             <section className="AddRecipe">
-                <header className="AddRecipe">
+                <header className="AddRecipe__header">
                     <h1>Add a New Memory</h1>
                 </header>
                 <SecretStashForm onSubmit={this.handleSubmit}>
