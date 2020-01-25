@@ -9,7 +9,10 @@
 > the ability to add, edit and delete them as you choose. You are also able to create folders to help organize your recipes as
 > if you were using a binder, but more efficient. You can share any recipe with a family or friend, just by giving them the url.
 
-[link to live app](https://secretstash-app.now.sh/home "Link to Secret Stash app homescreen").
+#### Technology Used
+
+> React, JavaScript, CSS, Enzyme, Jest, NPM, RESTFul API
+> [Try out Secret Stash](https://secretstash-app.now.sh/home "Link to Secret Stash app homescreen").
 
 ## Organized
 
