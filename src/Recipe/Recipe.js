@@ -30,7 +30,6 @@ class Recipe extends Component {
                     return res.json().then(e => Promise.reject(e));
             })
             .then(() => {
-                console.log(this.props)
                 this.context.deleteRecipe(recipeId);
                 this.props.history.push('/')
             })

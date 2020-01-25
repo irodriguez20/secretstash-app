@@ -15,7 +15,9 @@ exports[`Recipe component  renders a .Recipe by default 1`] = `
       </h2>
       <h3 />
     </header>
-    <blockquote />
+    <blockquote
+      className="Recipe__description"
+    />
     <Link
       to="/edit/undefined"
     >
@@ -23,6 +25,26 @@ exports[`Recipe component  renders a .Recipe by default 1`] = `
         className="Recipe__edit"
         type="edit"
       >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon="edit"
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          swapOpacity={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+         
         Edit
       </button>
     </Link>
@@ -76,7 +98,9 @@ exports[`Recipe component  renders the Recipe given props 1`] = `
         test-time-to-make
       </h3>
     </header>
-    <blockquote>
+    <blockquote
+      className="Recipe__description"
+    >
       test description
     </blockquote>
     <Link
@@ -86,6 +110,26 @@ exports[`Recipe component  renders the Recipe given props 1`] = `
         className="Recipe__edit"
         type="edit"
       >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon="edit"
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          swapOpacity={false}
+          symbol={false}
+          title=""
+          transform={null}
+        />
+         
         Edit
       </button>
     </Link>

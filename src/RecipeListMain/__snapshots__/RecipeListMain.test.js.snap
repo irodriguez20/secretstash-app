@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RecipeListMain component renders a .RecipeListMain by default 1`] = `
-<section
+<div
   className="RecipeListMain"
 >
-  <ul />
+  <ul
+    className="RecipeListMain__recipe-list"
+  />
   <div
     className="RecipeListMain__button-container"
   >
@@ -50,5 +52,5 @@ exports[`RecipeListMain component renders a .RecipeListMain by default 1`] = `
       Recipe
     </NavCircleButton>
   </div>
-</section>
+</div>
 `;

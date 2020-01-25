@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import CircleButton from '../CircleButton/CircleButton'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import RecipePageMainScreenShot from '../RecipePageMainScreenShot.png'
 import './LandingPage.css';
 
 class LandingPage extends Component {
@@ -23,19 +25,19 @@ class LandingPage extends Component {
                     </section>
                     <section className='LandingPage__recycle'>
                         <h3>Save the Trees</h3>
-                        <p>[<em>placeholder for recycling symbol and a tree</em>]</p>
+                        <h4><FontAwesomeIcon icon="recycle" /> <FontAwesomeIcon icon="tree" /></h4>
                         <p>Research shows the average household throws away 13,000 pieces of paper a year. Storing your recipes online eliminates the use of paper, decreasing the amount of trees cut down and paper wasted.</p>
                     </section>
                     <section className='LandingPage__organized'>
                         <h3>Organized in One Place</h3>
-                        <p>[<em>placeholder for screenshot of main recipe list screen</em>]</p>
+                        <img src={RecipePageMainScreenShot} alt="screenshot of the recipe main screen" />
                         <p>My family and I are notorious for having recipes saved everywhere. From bookmarks on safari, stashed in recipe boxes, folders, even saved as images on our phones. <br /> With Secret Stash all of your recipes are neatly organized on one app. Create folders for the different categories, edit and delete recipes as desired. </p>
                     </section>
-                    <section className='LandingPage__share'>
+                    {/*To come when I add authorization and user accounts. <section className='LandingPage__share'>
                         <h3>Share with your Family Members</h3>
                         <p>[<em>placeholder for screenshot of how to share profile/recipe</em>]</p>
                         <p>To many times to count I have wanted a recipe from a family member and end up having to go through a handful of people before I can recieve it. Secret Stash eliminates the telephone game. Easily share family recipes with a simple click of a button.</p>
-                    </section>
+                    </section> */}
                     <div className='LandingPage__button-container'>
                         <CircleButton
                             tag={Link}

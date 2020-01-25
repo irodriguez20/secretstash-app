@@ -52,21 +52,25 @@
   height: 150px;
 }
 
-@media only screen and (max-width: 380px) {
-  .Logo {
-    width: auto;
-    height: 100px;
-  }
-}
-@media only screen and (max-height: 812px) {
+@media only screen and (max-width: 400px) {
   .Logo {
     height: 100px;
     width: auto;
+    left: -15px;
   }
 }
 @media only screen and (min-width: 1000px) {
   .Logo {
     height: 200px;
     width: auto;
+  }
+}
+
+@media only screen and (min-height: 1366px) {
+  .Logo {
+    height: 160px;
+  }
+  .App {
+    font-size: 20px;
   }
 }

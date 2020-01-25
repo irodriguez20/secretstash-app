@@ -11,6 +11,13 @@
   font-size: 17px;
 }
 
+.LandingPage img {
+  width: 50%;
+  border-radius: 3px;
+  float: left;
+  margin-right: 5px;
+}
+
 .LandingPage__main {
   display: flex;
   flex-direction: column;
