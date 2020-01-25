@@ -1,6 +1,14 @@
 # Secret Stash
 
-![Secret Stash logo](src/logo_transparent.png "Secret Stash logo")
+## Why Secret Stash
+
+> Recipes are memories captured in food. They are family heirlooms passed down from generation to generation. Losing
+> a recipe, is losing something very special and sentimental. Recipes on paper are a thing of the past. As Generations
+> continue to grow technologically, recipes on paper will become obsolete. We need a way to store our family history with
+> a lowered risk of loss. Secret Stash allows you to do just that. You can safely store all of your recipes in an app, with
+> the ability to add, edit and delete them as you choose. You are also able to create folders to help organize your recipes as
+> if you were using a binder, but more efficient. You can share any recipe with a family or friend, just by giving them the url.
+
 [link to live app](https://secretstash-app.now.sh/home "Link to Secret Stash app homescreen").
 
 ## Organized
