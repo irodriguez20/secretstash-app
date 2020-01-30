@@ -16,6 +16,10 @@ textarea {
   justify-content: space-evenly;
 }
 
+.EditRecipe__cancel-button {
+  margin-right: 15px;
+}
+
 .EditRecipe__cancel-button:hover {
   background-color: #c8556a;
 }
