@@ -8,8 +8,11 @@ export const findRecipe = (recipes = [], recipeId) => {
 
     if (recipeId) {
         result = []
+        // eslint-disable-next-line
         for (var i = 0; i < recipes.length; ++i) {
+            // eslint-disable-next-line
             let recipe = recipes[i]
+            // eslint-disable-next-line
             if (recipe.id == recipeId)
                 result.push(recipe)
         }
@@ -24,8 +27,11 @@ export const getRecipesForFolder = (recipes = [], folderId) => {
 
     if (folderId) {
         result = []
+        // eslint-disable-next-line
         for (var i = 0; i < recipes.length; ++i) {
+            // eslint-disable-next-line
             let recipe = recipes[i]
+            // eslint-disable-next-line
             if (recipe.folderid == folderId)
                 result.push(recipe)
         }
