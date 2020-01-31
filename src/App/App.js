@@ -173,7 +173,7 @@ class App extends Component {
           <header className="App__header">
             <h1>
               <Link className="App__header_link" to='/'>
-                Your Recipes
+                Recipes
             </Link>
             </h1>
           </header>
