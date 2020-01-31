@@ -28,6 +28,9 @@
     "deploy": "now --prod ./build",
     "postdeploy": "now ./build/now.json"
   },
+  "engines": {
+    "node": "12.10.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
